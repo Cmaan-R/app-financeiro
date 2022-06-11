@@ -1,6 +1,10 @@
 module app.financeiro {
 	
-	requires java.base;
-	requires app.calculo;
+	requires java.base; // Por Padrão
+	//requires app.calculo;
+	requires app.api;
+	uses br.cmaan.app.Calculadora;
+	
+	
 	
 }
