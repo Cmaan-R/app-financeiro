@@ -6,9 +6,9 @@ public class Teste {
 	
 	public static void main(String[] args) {
 		
-		Calculadora calculadora = new Calculadora();
+		Calculadora calc = new Calculadora();
 		
-		System.out.println(calculadora.soma(2 , 3 ,4));
+		System.out.println(calc.soma(2 , 3 ,4));
 	}
 
 }
