@@ -1,5 +1,6 @@
 package br.cmaan.app.financeiro;
 
+import java.lang.reflect.Field;
 import java.util.ServiceLoader;
 
 import br.cmaan.app.Calculadora;
@@ -14,20 +15,18 @@ public class Teste {
 				.get();
 		
 		System.out.println(calc.soma(2 , 3 ,4));
-		
-//		OperacoesAritmeticas op =new OperacoesAritmeticas();
-//		System.out.println(op.soma(4 , 5 ,6 ));
+
 	
-//		try {
-//			Field fieldId = CalculadoraImpl.class.getDeclaredFields()[0];
-//			fieldId.setAccessible(true);
-//			fieldId.set(calc , "def");
-//			fieldId.setAccessible(false);
-//			
-//			System.out.println(calc.getId());
-//			
-//		} catch (Exception e ) {
-//			e.printStackTrace();
-//		}
+		try {
+			Field fieldId = calc.getClass().getDeclaredFields()[0];
+			fieldId.setAccessible(true);
+			fieldId.set(calc , "def");
+			fieldId.setAccessible(false);
+			
+			System.out.println(calc.getId());
+			
+		} catch (Exception e ) {
+			e.printStackTrace();
+		}
 	}
 }
